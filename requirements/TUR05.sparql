@@ -1,0 +1,21 @@
+# TUR05: ¿Qué regiones administrativas reciben más turistas en un período concreto?
+
+PREFIX qb: <https://www.w3.org/TR/vocab-data-cube/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX edinttur: <http://vocab.linkeddata.es/datosabiertos/def/turismo/cubo-turismo#>
+PREFIX edintdimension: <http://vocab.linkeddata.es/datosabiertos/def/dimension#>
+PREFIX edintmeasure: <http://vocab.linkeddata.es/datosabiertos/def/measure#>
+PREFIX esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#>
+
+SELECT ?region (SUM(?numTourists) AS ?totalTourists)
+WHERE {
+  ?obs a qb:Observation ;
+       edintdimension:refAdminRegion ?region ;
+       edintdimension:refPeriod ?period ;
+       edintmeasure:numTourists ?numTourists .
+
+  FILTER(?period = <PERIOD_IRI>)
+}
+GROUP BY ?region
+ORDER BY DESC(?totalTourists)

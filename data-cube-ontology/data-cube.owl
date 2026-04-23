@@ -1,0 +1,211 @@
+@prefix edinttur:     <http://vocab.linkeddata.es/datosabiertos/def/turismo/cubo-turismo#> .
+@prefix edintdimension:      <http://vocab.linkeddata.es/datosabiertos/def/dimension#> .
+@prefix edintmeasure: <http://vocab.linkeddata.es/datosabiertos/def/measure#> .
+@prefix edintkos:      <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix dc:     <http://purl.org/dc/terms/> .
+@prefix vann:   <http://purl.org/vocab/vann/> .
+@prefix qb:     <https://www.w3.org/TR/vocab-data-cube/> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time:   <http://www.w3.org/2006/time#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-measure:   <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix esadm:         <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
+
+# ============================================================
+# Ontología
+# ============================================================
+
+<http://vocab.linkeddata.es/datosabiertos/def/turismo/cubo-turismo#>
+    a owl:Ontology ;
+    owl:versionIRI <http://vocab.linkeddata.es/datosabiertos/def/turismo/cubo-turismo/0.1.0> ;
+    owl:imports    <https://www.w3.org/TR/vocab-data-cube/> ;
+    dc:created     "2026-04-17"^^xsd:date ;
+    dc:creator     "Daniel Doña", "Diego Conde Herreros", "Edna Ruckhaus",
+                   "Lucía Sánchez", "Oscar Corcho", "Socorro Bernardos" ;
+    dc:description "La ontología de Cubo de Datos Turísticos describe la estructura de los datos de ocupación turística, flujo turístico e indicadores en un único DSD que reúne todas las dimensiones y medidas."@es ,
+                   "The Tourism Data Cube ontology describes the structure of tourist occupancy, tourist flow and indicator data in a single DSD that gathers all dimensions and measures."@en ;
+    dc:license     <https://creativecommons.org/licenses/by/4.0/> ;
+    dc:title       "Ontología de Cubo de Datos Turísticos"@es ,
+                   "Tourism Data Cube Ontology"@en ;
+    vann:preferredNamespacePrefix "edinttur" ;
+    vann:preferredNamespaceUri    <http://vocab.linkeddata.es/datosabiertos/def/turismo/cubo-turismo#> ;
+    owl:versionInfo "0.1.0" .
+
+# ============================================================
+# DSD ÚNICO INTEGRADO
+# Reúne todas las dimensiones y medidas de los tres cubos
+# (ocupación, flujo, indicadores) usando blank nodes
+# ============================================================
+
+edinttur:DSD_Tourism
+    a qb:DataStructureDefinition ;
+    rdfs:label "DSD integrado de turismo"@es ,
+               "Integrated tourism DSD"@en ;
+    rdfs:comment "Estructura de datos integrada que combina las dimensiones y medidas de los cubos de ocupación turística, flujo turístico e indicadores turísticos."@es ;
+
+    # --- Dimensiones (compartidas y específicas) ---
+    qb:component [ qb:dimension edintdimension:refAdminRegion ; qb:order 1 ] ;
+    qb:component [ qb:dimension edintdimension:refPeriod      ; qb:order 2 ] ;
+    qb:component [ qb:dimension edintdimension:countryOfOrigin       ; qb:order 3 ] ;
+    qb:component [ qb:dimension edintdimension:flowType              ; qb:order 4 ] ;
+    qb:component [ qb:dimension edintdimension:registrationNumber    ; qb:order 5 ] ;
+
+    # --- Medidas: indicadores ---
+    qb:component [ qb:measure edintmeasure:averageStay         ] ;
+    qb:component [ qb:measure edintmeasure:degreeOccupation    ] ;
+    qb:component [ qb:measure edintmeasure:growthOfPlaces      ] ;
+    qb:component [ qb:measure edintmeasure:intensityPerResident ] ;
+
+    # --- Medidas: flujo turístico ---
+    qb:component [ qb:measure edintmeasure:numTourists         ] ;
+
+    # --- Medidas: ocupación turística ---
+    qb:component [ qb:measure edintmeasure:availablePlaces ] ;
+    qb:component [ qb:measure edintmeasure:numTravelers    ] ;
+    qb:component [ qb:measure edintmeasure:occupiedPlaces  ] ;
+    qb:component [ qb:measure edintmeasure:overnightStays  ] .
+
+# ============================================================
+# Dimensiones
+# ============================================================
+
+edintdimension:refAdminRegion
+    a owl:ObjectProperty , qb:DimensionProperty ;
+    rdfs:subPropertyOf sdmx-dimension:refArea ;
+    rdfs:label   "reference administrative region"@en ,
+                 "región administrativa de referencia"@es ;
+    rdfs:comment "Referencia a una región administrativa que puede ser un barrio, distrito o municipio."@es ,
+                 "Reference to an administrative region that can be a neighborhood, district, or municipality."@en ;
+    rdfs:range [
+        a owl:Class ;
+        owl:unionOf ( esadm:Barrio esadm:Distrito esadm:Municipio )
+    ] .
+
+edintdimension:refPeriod
+    a owl:ObjectProperty , qb:DimensionProperty ;
+    rdfs:subPropertyOf sdmx-dimension:refPeriod ;
+    rdfs:range time:Interval ;
+    rdfs:label   "reference period"@en ,
+                 "período de referencia"@es ;
+    rdfs:comment "Time interval that can be, for example, a week, a month, a year."@en ,
+                 "Intervalo de tiempo que puede ser por ejemplo una semana, un mes, un año."@es .
+
+edintdimension:countryOfOrigin
+    a owl:ObjectProperty , qb:DimensionProperty , qb:CodedProperty ;
+    rdfs:range skos:Concept ;
+    qb:codeList edintkos:CountryOfOrigin ;
+    rdfs:label   "country of origin"@en ,
+                 "país de origen"@es ;
+    rdfs:comment "País de origen del turista."@es ,
+                 "Country of origin of the tourist."@en .
+
+edintdimension:flowType
+    a owl:ObjectProperty , qb:DimensionProperty , qb:CodedProperty ;
+    rdfs:range skos:Concept ;
+    qb:codeList edintkos:TourismFlowType ;
+    rdfs:label   "flow type"@en ,
+                 "tipo de flujo"@es ;
+    rdfs:comment "Tipo de flujo turístico (entrada, salida, interno)."@es ,
+                 "Type of tourist flow (inbound, outbound, domestic)."@en .
+
+edintdimension:registrationNumber
+    a owl:DatatypeProperty , qb:DimensionProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label   "registration number (Segittur)"@en ,
+                 "número de registro (Segittur)"@es ;
+    rdfs:comment "Número de registro del establecimiento turístico según Segittur."@es ,
+                 "Tourist accommodation registration number as defined by Segittur."@en .
+
+# ============================================================
+# Medidas
+# ============================================================
+
+edintmeasure:averageStay
+    a owl:DatatypeProperty , qb:MeasureProperty ;
+    rdfs:subPropertyOf sdmx-measure:obsValue ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "average stay"@en , "estancia media"@es .
+
+edintmeasure:degreeOccupation
+    a owl:DatatypeProperty , qb:MeasureProperty ;
+    rdfs:subPropertyOf sdmx-measure:obsValue ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "degree of occupation"@en , "grado de ocupación"@es .
+
+edintmeasure:growthOfPlaces
+    a owl:DatatypeProperty , qb:MeasureProperty ;
+    rdfs:subPropertyOf sdmx-measure:obsValue ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "growth of places"@en , "crecimiento de plazas"@es .
+
+edintmeasure:intensityPerResident
+    a owl:DatatypeProperty , qb:MeasureProperty ;
+    rdfs:subPropertyOf sdmx-measure:obsValue ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "intensity per resident"@en , "intensidad por residente"@es .
+
+edintmeasure:numTourists
+    a owl:DatatypeProperty , qb:MeasureProperty ;
+    rdfs:subPropertyOf sdmx-measure:obsValue ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:label "number of tourists"@en , "número de turistas"@es .
+
+edintmeasure:availablePlaces
+    a owl:DatatypeProperty , qb:MeasureProperty ;
+    rdfs:subPropertyOf sdmx-measure:obsValue ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:label "available places"@en , "plazas disponibles"@es .
+
+edintmeasure:numTravelers
+    a owl:DatatypeProperty , qb:MeasureProperty ;
+    rdfs:subPropertyOf sdmx-measure:obsValue ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:label "number of travelers"@en , "número de viajeros"@es .
+
+edintmeasure:occupiedPlaces
+    a owl:DatatypeProperty , qb:MeasureProperty ;
+    rdfs:subPropertyOf sdmx-measure:obsValue ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:label "occupied places"@en , "plazas ocupadas"@es .
+
+edintmeasure:overnightStays
+    a owl:DatatypeProperty , qb:MeasureProperty ;
+    rdfs:subPropertyOf sdmx-measure:obsValue ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:label "overnight stays"@en , "pernoctaciones"@es .
+
+# ============================================================
+# Esquemas de conceptos (code lists)
+# ============================================================
+
+edintkos:CountryOfOrigin
+    a skos:ConceptScheme ;
+    rdfs:label "Country of origin"@en , "País de origen"@es .
+
+edintkos:TourismFlowType
+    a skos:ConceptScheme ;
+    rdfs:label "Tourism flow type"@en , "Tipo de flujo turístico"@es .
+
+# ============================================================
+# Clases de territorio (rango de refAdminRegion)
+# ============================================================
+
+esadm:Barrio
+    a owl:Class ;
+    rdfs:label   "Barrio"@es , "Neighbourhood"@en ;
+    rdfs:comment "Un barrio es cada una de las partes en que se dividen los pueblos grandes o sus distritos [fuente: DRAE 2011]."@es ,
+                 "A neighborhood is each of the parts into which large towns or their districts are divided [source: DRAE 2011]."@en .
+
+esadm:Distrito
+    a owl:Class ;
+    rdfs:label   "Distrito"@es , "District"@en ;
+    rdfs:comment "Un distrito es cada una de las demarcaciones en que se subdivide un territorio o una población para distribuir y ordenar el ejercicio de los derechos civiles y políticos [fuente: DRAE 2011]."@es .
+
+esadm:Municipio
+    a owl:Class ;
+    rdfs:label   "Municipio"@es , "Municipality"@en ;
+    rdfs:comment "Ente local definido en el artículo 140 de la Constitución española y entidad básica de la organización territorial del Estado según el artículo 1 de la Ley 7/1985."@es .

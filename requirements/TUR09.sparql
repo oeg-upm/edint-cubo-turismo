@@ -1,0 +1,28 @@
+# TUR09: ¿Qué países de origen aportan un mayor número de turistas a una región administrativa en un período concreto?
+
+PREFIX qb: <https://www.w3.org/TR/vocab-data-cube/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX edinttur: <http://vocab.linkeddata.es/datosabiertos/def/turismo/cubo-turismo#>
+PREFIX edintdimension: <http://vocab.linkeddata.es/datosabiertos/def/dimension#>
+PREFIX edintmeasure: <http://vocab.linkeddata.es/datosabiertos/def/measure#>
+PREFIX esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#>
+
+SELECT ?country ?countryLabel (SUM(?numTourists) AS ?totalTourists)
+WHERE {
+  ?obs a qb:Observation ;
+       edintdimension:refAdminRegion ?region ;
+       edintdimension:refPeriod ?period ;
+       edintdimension:countryOfOrigin ?country ;
+       edintmeasure:numTourists ?numTourists .
+
+  OPTIONAL {
+    ?country skos:prefLabel ?countryLabel .
+    FILTER(LANG(?countryLabel) = "es" || LANG(?countryLabel) = "en")
+  }
+
+  FILTER(?region = <REGION_IRI>)
+  FILTER(?period = <PERIOD_IRI>)
+}
+GROUP BY ?country ?countryLabel
+ORDER BY DESC(?totalTourists)

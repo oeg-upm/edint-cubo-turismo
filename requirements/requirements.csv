@@ -1,0 +1,13 @@
+Identifier,Responsible partner,Version,"Competency Question /
+ Natural language sentence (fact)",Answer (For Competency Questions),"Status (Proposed, Accepted, Rejected, Deprecated)",Comments (optional),Extracted from (provenance),"Priority 
+(High, Medium, Low) (optional)",Relation with other requirements (optional),Associated ontology elements,Relation to ontology elements in other domains
+TUR01,UPM,v0.1.0,¿Cuáles son los principales indicadores de ocupación turística de una región administrativa en un período concreto?,,Proposed,,,,,,
+TUR02,UPM,v0.1.0,¿Cómo se distribuye el número de turistas por país de origen en una región administrativa y período concretos?,,Proposed,,,,,,
+TUR03,UPM,v0.1.0,¿Cómo se distribuye el número de turistas por tipo de flujo en una región administrativa y período concretos?,,Proposed,,,,,,
+TUR04,UPM,v0.1.0,¿Cuál es el número de turistas por tipo de flujo y país de origen en una región administrativa y período concretos?,,Proposed,,,,,,
+TUR05,UPM,v0.1.0,¿Qué regiones administrativas reciben más turistas en un período concreto?,,Proposed,,,,,,
+TUR06,UPM,v0.1.0,¿Qué regiones administrativas presentan mayor grado de ocupación en un período concreto?,,Proposed,,,,,,
+TUR07,UPM,v0.1.0,¿Cuál es la relación entre número de viajeros y pernoctaciones en una región administrativa y período concretos?,,Proposed,,,,,,
+TUR08,UPM,v0.1.0,"Cuáles son los valores de número de viajeros, pernoctaciones, plazas disponibles y plazas ocupadas para cada establecimiento turístico de una región administrativa en un período concreto?",,Proposed,,,,,,
+TUR09,UPM,v0.1.0,¿Qué países de origen aportan un mayor número de turistas a una región administrativa en un período concreto?,,Proposed,,,,,,
+TUR10,UPM,v0.1.0,¿Qué tipos de flujo turístico presentan un mayor número de turistas en una región administrativa y período concretos?,,Proposed,,,,,,

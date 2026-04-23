@@ -1,0 +1,27 @@
+# TUR03: ¿Cómo se distribuye el número de turistas por tipo de flujo en una región administrativa y período concretos?
+
+PREFIX qb: <https://www.w3.org/TR/vocab-data-cube/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX edinttur: <http://vocab.linkeddata.es/datosabiertos/def/turismo/cubo-turismo#>
+PREFIX edintdimension: <http://vocab.linkeddata.es/datosabiertos/def/dimension#>
+PREFIX edintmeasure: <http://vocab.linkeddata.es/datosabiertos/def/measure#>
+PREFIX esadm: <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#>
+
+SELECT ?flowType ?flowTypeLabel ?numTourists
+WHERE {
+  ?obs a qb:Observation ;
+       edintdimension:refAdminRegion ?region ;
+       edintdimension:refPeriod ?period ;
+       edintdimension:flowType ?flowType ;
+       edintmeasure:numTourists ?numTourists .
+
+  OPTIONAL {
+    ?flowType skos:prefLabel ?flowTypeLabel .
+    FILTER(LANG(?flowTypeLabel) = "es" || LANG(?flowTypeLabel) = "en")
+  }
+
+  FILTER(?region = <REGION_IRI>)
+  FILTER(?period = <PERIOD_IRI>)
+}
+ORDER BY DESC(?numTourists)
