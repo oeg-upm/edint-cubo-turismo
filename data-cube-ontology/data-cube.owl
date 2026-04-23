@@ -50,7 +50,7 @@ edinttur:DSD_Tourism
     # --- Dimensiones (compartidas y específicas) ---
     qb:component [ qb:dimension edintdimension:refAdminRegion ; qb:order 1 ] ;
     qb:component [ qb:dimension edintdimension:refPeriod      ; qb:order 2 ] ;
-    qb:component [ qb:dimension edintdimension:countryOfOrigin       ; qb:order 3 ] ;
+    qb:component [ qb:dimension edintdimension:countryOfResidence       ; qb:order 3 ] ;
     qb:component [ qb:dimension edintdimension:flowType              ; qb:order 4 ] ;
     qb:component [ qb:dimension edintdimension:registrationNumber    ; qb:order 5 ] ;
 
@@ -94,14 +94,14 @@ edintdimension:refPeriod
     rdfs:comment "Time interval that can be, for example, a week, a month, a year."@en ,
                  "Intervalo de tiempo que puede ser por ejemplo una semana, un mes, un año."@es .
 
-edintdimension:countryOfOrigin
+edintdimension:countryOfResidence
     a owl:ObjectProperty , qb:DimensionProperty , qb:CodedProperty ;
     rdfs:range skos:Concept ;
-    qb:codeList edintkos:CountryOfOrigin ;
-    rdfs:label   "country of origin"@en ,
-                 "país de origen"@es ;
-    rdfs:comment "País de origen del turista."@es ,
-                 "Country of origin of the tourist."@en .
+    qb:codeList edintkos:countryOfResidence ;
+    rdfs:label   "country of residence"@en ,
+                 "país de residencia"@es ;
+    rdfs:comment "País de residencia del turista."@es ,
+                 "Country of residence of the tourist."@en .
 
 edintdimension:flowType
     a owl:ObjectProperty , qb:DimensionProperty , qb:CodedProperty ;
@@ -128,63 +128,81 @@ edintmeasure:averageStay
     a owl:DatatypeProperty , qb:MeasureProperty ;
     rdfs:subPropertyOf sdmx-measure:obsValue ;
     rdfs:range xsd:decimal ;
+    rdfs:comment "Número de pernoctas en promedio. Mide el número total de pernoctas entre el número total de turistas."@es ,
+                 "Average number of overnight stays. Measures the total number of overnight stays divided by the total number of tourists."@en ;
     rdfs:label "average stay"@en , "estancia media"@es .
 
 edintmeasure:degreeOccupation
     a owl:DatatypeProperty , qb:MeasureProperty ;
     rdfs:subPropertyOf sdmx-measure:obsValue ;
     rdfs:range xsd:decimal ;
-    rdfs:label "degree of occupation"@en , "grado de ocupación"@es .
+    rdfs:comment "Grado de uso del alojamiento que permite detectar períodos de alta ocupación turística. Mide el total de plazas ocupadas sobre el total de plazas disponibles en un determinado período."@es ,
+                 "Occupancy rate, which allows for the detection of peak tourist periods. It measures the total number of occupied beds relative to the total number of available beds during a given period."@en ;
+    rdfs:label "occupancy rate"@en , "grado de ocupación"@es .
 
 edintmeasure:growthOfPlaces
     a owl:DatatypeProperty , qb:MeasureProperty ;
     rdfs:subPropertyOf sdmx-measure:obsValue ;
     rdfs:range xsd:decimal ;
+    rdfs:comment "Evolución de la capacidad alojativa en un período dado permitiendo conocer si está en expansión, estabilidad o recucción. Mide la variación porcentual de la capacidad alojativa de un período con respecto al período anterior."@es ,
+                 "The evolution of accommodation capacity over a given period allows us to determine if it is expanding, stable, or declining. It measures the percentage change in accommodation capacity in a certain period with respect to the previous period."@en ;
     rdfs:label "growth of places"@en , "crecimiento de plazas"@es .
 
 edintmeasure:intensityPerResident
     a owl:DatatypeProperty , qb:MeasureProperty ;
     rdfs:subPropertyOf sdmx-measure:obsValue ;
     rdfs:range xsd:decimal ;
+    rdfs:comment "Presión turística en un área determinada. Mide la relación entre el número de visitantes y el número de residentes en la zona."@es ,
+                 "Tourist pressure in a given area. It measures the relationship between the number of visitors and the number of residents in the area."@en ;
     rdfs:label "intensity per resident"@en , "intensidad por residente"@es .
 
 edintmeasure:numTourists
     a owl:DatatypeProperty , qb:MeasureProperty ;
     rdfs:subPropertyOf sdmx-measure:obsValue ;
     rdfs:range xsd:nonNegativeInteger ;
+    rdfs:comment "Número total de turistas que entran, salen o internos."@es ,
+                 "Total number of inbound, outbound or domestic tourists."@en ;
     rdfs:label "number of tourists"@en , "número de turistas"@es .
 
 edintmeasure:availablePlaces
     a owl:DatatypeProperty , qb:MeasureProperty ;
     rdfs:subPropertyOf sdmx-measure:obsValue ;
     rdfs:range xsd:nonNegativeInteger ;
+    rdfs:comment "Plazas disponibles en alojamientos."@es ,
+                 "Beda available in Accomodations"@en ;
     rdfs:label "available places"@en , "plazas disponibles"@es .
 
 edintmeasure:numTravelers
     a owl:DatatypeProperty , qb:MeasureProperty ;
     rdfs:subPropertyOf sdmx-measure:obsValue ;
     rdfs:range xsd:nonNegativeInteger ;
+    rdfs:comment "Número de viajeros en general. Pueden ser viajeros de turismo o negocios."@es ,
+                 "Number of travelers in general. May be tourism or business travelers."@en ;
     rdfs:label "number of travelers"@en , "número de viajeros"@es .
 
 edintmeasure:occupiedPlaces
     a owl:DatatypeProperty , qb:MeasureProperty ;
     rdfs:subPropertyOf sdmx-measure:obsValue ;
     rdfs:range xsd:nonNegativeInteger ;
+    rdfs:comment "Número total de plazas que se han ocupado."@es ,
+                 "Total number of places that have been occupied."@en ;
     rdfs:label "occupied places"@en , "plazas ocupadas"@es .
 
 edintmeasure:overnightStays
     a owl:DatatypeProperty , qb:MeasureProperty ;
     rdfs:subPropertyOf sdmx-measure:obsValue ;
     rdfs:range xsd:nonNegativeInteger ;
+    rdfs:comment "Número total de pernoctas."@es ,
+                 "Total number of overnight stays."@en ;
     rdfs:label "overnight stays"@en , "pernoctaciones"@es .
 
 # ============================================================
 # Esquemas de conceptos (code lists)
 # ============================================================
 
-edintkos:CountryOfOrigin
+edintkos:countryOfResidence
     a skos:ConceptScheme ;
-    rdfs:label "Country of origin"@en , "País de origen"@es .
+    rdfs:label "Country of residence"@en , "País de residencia"@es .
 
 edintkos:TourismFlowType
     a skos:ConceptScheme ;
