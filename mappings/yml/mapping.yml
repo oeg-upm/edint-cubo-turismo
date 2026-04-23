@@ -1,0 +1,61 @@
+prefixes:
+  brick: https://brickschema.org/schema/Brick#
+  csvw: http://www.w3.org/ns/csvw#
+  dc: http://purl.org/dc/elements/1.1/
+  dcat: http://www.w3.org/ns/dcat#
+  dcmitype: http://purl.org/dc/dcmitype/
+  dcam: http://purl.org/dc/dcam/
+  doap: http://usefulinc.com/ns/doap#
+  foaf: http://xmlns.com/foaf/0.1/
+  geo: http://www.opengis.net/ont/geosparql#
+  odrl: http://www.w3.org/ns/odrl/2/
+  org: http://www.w3.org/ns/org#
+  prof: http://www.w3.org/ns/dx/prof/
+  prov: http://www.w3.org/ns/prov#
+  qb: http://purl.org/linked-data/cube#
+  schema: https://schema.org/
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  sosa: http://www.w3.org/ns/sosa/
+  ssn: http://www.w3.org/ns/ssn/
+  time: http://www.w3.org/2006/time#
+  vann: http://purl.org/vocab/vann/
+  void: http://rdfs.org/ns/void#
+  wgs: https://www.w3.org/2003/01/geo/wgs84_pos#
+  owl: http://www.w3.org/2002/07/owl#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  xml: http://www.w3.org/XML/1998/namespace
+  dct: http://purl.org/dc/terms/
+  inelod: http://lod.ine.es/recurso/cubes/
+  ql: http://semweb.mmlab.be/ns/ql#
+  rml: http://semweb.mmlab.be/ns/rml#
+  rr: http://www.w3.org/ns/r2rml#
+  sdmx-dimension: http://purl.org/linked-data/sdmx/2009/dimension#
+  edintgast: http://vocab.linkeddata.es/datosabiertos/def/comercio/cubo-gasto-comercial/
+  edintdimension: http://vocab.linkeddata.es/datosabiertos/def/dimension#
+  edintmeasure: http://vocab.linkeddata.es/datosabiertos/def/measure#
+  edinttemp: http://vocab.linkeddata.es/datosabiertos/def/actividad-economica/cubo-empleo#
+  edinttur: http://vocab.linkeddata.es/datosabiertos/def/turismo/cubo-turismo#
+mappings:
+  mappings_tourism:
+    sources:
+    - [../pathtodata.csv~csv]
+    s: http://vocab.linkeddata.es/datosabiertos/def/actividad-economica/cubo-empleo/o$(Índice)
+    po:
+    - [rdf:type, qb:Observation]
+    - [edintdimension:refAdminRegion, $(Área)]
+    - [edintdimension:refPeriod, $(Periodo)]
+    - [edintdimension:countryOfOrigin, $(País de Origen)]
+    - [edintdimension:flowType, $(Tipo de Flujo Turístico)]
+    - [edintdimension:registrationNumber, $(Número de Registro)]
+    - [qb:dataSet, edinttur:SampleDataSet]
+    - [edintmeasure:averageStay, $(Estancia Media)]
+    - [edintmeasure:degreeOccupation, $(Grado de Ocupación)]
+    - [edintmeasure:growthOfPlaces, $(Tasa de Crecimiento)]
+    - [edintmeasure:intensityPerResident, $(Tasa de Intensidad por Residente)]
+    - [edintmeasure:availablePlaces, $(Plazas disponibles)]
+    - [edintmeasure:numTravelers, $(Número de Viajeros)]
+    - [edintmeasure:occupiedPlaces, $(Número de Plazas Ocupadas)]
+    - [edintmeasure:overnightStays, $(Número de Estancias¡)]
