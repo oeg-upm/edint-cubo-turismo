@@ -1,0 +1,223 @@
+@prefix brick: <https://brickschema.org/schema/Brick#>.
+@prefix csvw: <http://www.w3.org/ns/csvw#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+@prefix dcmitype: <http://purl.org/dc/dcmitype/>.
+@prefix dcam: <http://purl.org/dc/dcam/>.
+@prefix doap: <http://usefulinc.com/ns/doap#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix geo: <http://www.opengis.net/ont/geosparql#>.
+@prefix odrl: <http://www.w3.org/ns/odrl/2/>.
+@prefix org: <http://www.w3.org/ns/org#>.
+@prefix prof: <http://www.w3.org/ns/dx/prof/>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix qb: <http://purl.org/linked-data/cube#>.
+@prefix schema: <https://schema.org/>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix sosa: <http://www.w3.org/ns/sosa/>.
+@prefix ssn: <http://www.w3.org/ns/ssn/>.
+@prefix time: <http://www.w3.org/2006/time#>.
+@prefix vann: <http://purl.org/vocab/vann/>.
+@prefix void: <http://rdfs.org/ns/void#>.
+@prefix wgs: <https://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix inelod: <http://lod.ine.es/recurso/cubes/>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>.
+@prefix edintgast: <http://vocab.linkeddata.es/datosabiertos/def/comercio/cubo-gasto-comercial/>.
+@prefix edintdimension: <http://vocab.linkeddata.es/datosabiertos/def/dimension#>.
+@prefix edintmeasure: <http://vocab.linkeddata.es/datosabiertos/def/measure#>.
+@prefix edinttemp: <http://vocab.linkeddata.es/datosabiertos/def/actividad-economica/cubo-empleo#>.
+@prefix edinttur: <http://vocab.linkeddata.es/datosabiertos/def/turismo/cubo-turismo#>.
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#>.
+@prefix schema: <http://schema.org/>.
+@prefix formats: <http://www.w3.org/ns/formats/>.
+@prefix comp: <http://semweb.mmlab.be/ns/rml-compression#>.
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#>.
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#>.
+@base <http://example.com/ns#>.
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix map:    <https://w3id.org/edint/cubo-turismo/mapping/> .
+
+map:person_000 rdf:type foaf:Person ;
+    rdfs:label "Diego Conde Herreros" .
+
+map:rules_000 schema:contributor map:person_000 ;
+    rdf:type schema:Dataset ;
+    schema:version "0.1.0" ;
+    schema:title "Ontología de Cubo de Datos Turísticos (Tourism Data Cubes Ontology)" ;
+    schema:dateCreated "23-04-2026" ;
+    schema:description "Este recurso define la ontología EDINT para cubos de datos turísticos, describiendo las estructuras de cubos de ocupación turística, flujo turístico e indicadores turísticos. La ontología reutiliza el vocabulario W3C RDF Data Cube y genera estructuras para especificar dimensiones y medidas. Incluye, entre otras, dimensiones como periodo, región administrativa, país de origen, tipo de flujo y número de registro del establecimiento, así como medidas como estancia media, grado de ocupación, crecimiento de plazas, intensidad por residente, número de turistas, plazas disponibles, viajeros, plazas ocupadas y pernoctaciones." .
+
+<mappings_tourism_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "../pathtodata.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://vocab.linkeddata.es/datosabiertos/def/actividad-economica/cubo-empleo/o{Indice}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant qb:Observation;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintdimension:refAdminRegion;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "Area";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintdimension:refPeriod;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "Periodo";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintdimension:countryOfOrigin;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "Pais de Origen";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintdimension:flowType;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "Tipo de Flujo Turístico";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintdimension:registrationNumber;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "Número de Registro";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant qb:dataSet;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edinttur:SampleDataSet;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintmeasure:averageStay;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "Estancia Media";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintmeasure:degreeOccupation;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "Grado de Ocupación";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintmeasure:growthOfPlaces;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "Tasa de Crecimiento";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintmeasure:intensityPerResident;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "Tasa de Intensidad por Residente";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintmeasure:availablePlaces;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "Plazas disponibles";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintmeasure:numTravelers;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "Número de Viajeros";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintmeasure:occupiedPlaces;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "Número de Plazas Ocupadas";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintmeasure:overnightStays;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "Número de Estancias¡";
+		];
+	].
+
+

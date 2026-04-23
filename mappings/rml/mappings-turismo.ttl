@@ -1,0 +1,53 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix inelod: <http://lod.ine.es/recurso/cubes/> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix edintgast: <http://vocab.linkeddata.es/datosabiertos/def/comercio/cubo-gasto-comercial/> .
+@prefix edintdimension: <http://vocab.linkeddata.es/datosabiertos/def/dimension#> .
+@prefix edintmeasure: <http://vocab.linkeddata.es/datosabiertos/def/measure#> .
+@prefix edinttemp: <http://vocab.linkeddata.es/datosabiertos/def/actividad-economica/cubo-empleo#> .
+@prefix edintdimension: <http://vocab.linkeddata.es/datosabiertos/def/dimension#> .
+@prefix edintmeasure: <http://vocab.linkeddata.es/datosabiertos/def/measure#> .
+@prefix edinttur: <http://vocab.linkeddata.es/datosabiertos/def/turismo/cubo-turismo#> .
+
+edinttur:mappings_tourism rdf:type rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "../pathtodata.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "Área" ] ;
+            rr:predicate edintdimension:refAdminRegion ],
+        [ rr:objectMap [ rml:reference "Periodo" ] ;
+            rr:predicate edintdimension:refPeriod ],
+        [ rr:objectMap [ rml:reference "País de Origen" ] ;
+            rr:predicate edintdimension:countryOfOrigin  ],     
+        [ rr:objectMap [ rml:reference "Tipo de Flujo Turístico" ] ;
+            rr:predicate edintdimension:flowType  ], 
+        [ rr:objectMap [ rml:reference "Número de Registro" ] ;
+            rr:predicate edintdimension:registrationNumber  ],                                                          
+        [ rr:object edinttur:SampleDataSet ;
+            rr:predicate qb:dataSet ],
+
+        [ rr:objectMap [ rml:reference "Estancia Media" ] ;
+            rr:predicate edintmeasure:averageStay ] ,
+        [ rr:objectMap [ rml:reference "Grado de Ocupación" ] ;            
+            rr:predicate edintmeasure:degreeOccupation ] ,  
+        [ rr:objectMap [ rml:reference "Tasa de Crecimiento" ] ;            
+            rr:predicate edintmeasure:growthOfPlaces ] ,    
+        [ rr:objectMap [ rml:reference "Tasa de Intensidad por Residente" ] ;            
+            rr:predicate edintmeasure:intensityPerResident ] ,      
+        [ rr:objectMap [ rml:reference "Plazas disponibles" ] ;            
+            rr:predicate edintmeasure:availablePlaces ] ,            
+        [ rr:objectMap [ rml:reference "Número de Viajeros" ] ;            
+            rr:predicate edintmeasure:numTravelers ] ,                      
+        [ rr:objectMap [ rml:reference "Número de Plazas Ocupadas" ] ;            
+            rr:predicate edintmeasure:occupiedPlaces ] , 
+        [ rr:objectMap [ rml:reference "Número de Estancias¡" ] ;            
+            rr:predicate edintmeasure:overnightStays ] ;                                                                                             
+    rr:subjectMap [ rr:class qb:Observation ;
+            rr:template "http://vocab.linkeddata.es/datosabiertos/def/actividad-economica/cubo-empleo/o{Índice}" ] .
