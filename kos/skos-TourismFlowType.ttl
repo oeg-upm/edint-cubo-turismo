@@ -1,0 +1,51 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintkostouflotype: <http://vocab.linkeddata.es/datosabiertos/kos/edint/TourismFlowType/> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+edintkos:TourismFlowType a skos:ConceptScheme ; 
+    dct:issued "2026-04-24"^^xsd:date ;
+    dct:modified "2026-04-24"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
+    rdfs:label "Type of tourism flow"@en ;
+    rdfs:label "Tipo de flujo de turismo"@es ;
+    dct:title "Concept scheme grouping types of tourism flow"@en ;
+    dct:title "Esquema de conceptos que agrupa tipos de flujo de turismo"@es ;
+    skos:hasTopConcept edintkostouflotype:National ;
+    skos:hasTopConcept edintkostouflotype:International ;
+    skos:hasTopConcept edintkostouflotype:Interprovincial .
+
+
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+edintkostouflotype:National a skos:Concept ;
+	skos:inScheme edintkos:TourismFlowType ;
+  	skos:prefLabel "Nacional"@es ;
+	skos:prefLabel "National"@en .
+
+edintkostouflotype:InterNational a skos:Concept ;
+	skos:inScheme edintkos:TourismFlowType ;
+  	skos:prefLabel "Internacional"@es ;
+	skos:prefLabel "International"@en .
+
+edintkostouflotype:Interprovincial a skos:Concept ;
+  skos:inScheme edintkos:TourismFlowType ;
+  skos:prefLabel "Interprovincial"@es ;
+  skos:prefLabel "Interprovincial"@en  .
