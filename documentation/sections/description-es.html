@@ -4,5 +4,60 @@
 Figura 1. Modelo conceptual de la ontología de cubos de turismo</figcaption></center></p>
 <p>Los cubos se definen mediante los conceptos y propiedades descritos en el vocabulario  <a href="https://www.w3.org/TR/vocab-data-cube/">W3C RDF Data Cube</a>. La <a href="#DSD_Tourism">estructura DSD_TourismOccupation</a> define el conjunto de dimensiones y propiedades del cubo que se pueden combinar de diferentes maneras para generar cubos que cumplan diversos propósitos.</p>
 <p>Así, se tiene por ejemplo para un cubo que explote los datos de ocupación turística se puede utilizar la dimensión <a href="#http://vocab.linkeddata.es/datosabiertos/def/dimension#refAdminRegion">referencia a región administrativa</a> y la dimensión <a href="#http://vocab.linkeddata.es/datosabiertos/def/dimension#refPeriod">referencia a período</a>. La medida sería el <a href="#http://vocab.linkeddata.es/datosabiertos/def/measure#numTravelers">número de viajeros</a> que se refiere al número de personas que han ocupado establecimientos de alojamiento en un cierto período de tiempo, el año 2025, en una cierta región administrativa, el municipio de Benidorm. De la misma manera y añadiendo las dimensiones <a href="#http://vocab.linkeddata.es/datosabiertos/def/dimension#flowType">tipo de flujo de turistas</a> y  <a href="#http://vocab.linkeddata.es/datosabiertos/def/dimension#countryOfResidence">país de residencia</a>, se puede tener el  (<a href="#http://vocab.linkeddata.es/datosabiertos/def/measure#numTourists">número de turistas</a>) de un determinado país, por ejemplo Alemania, que hayan llegado a Benidorm en el año 2025.
+
+<pre><textarea style="resize:none" readonly id="code2" name="code" rows="25" cols="100">
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix dc:     <http://purl.org/dc/terms/> .
+@prefix vann:   <http://purl.org/vocab/vann/> .
+@prefix qb:     <http://purl.org/linked-data/cube#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix time:   <http://www.w3.org/2006/time#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-measure:   <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix edintdim:      <http://vocab.linkeddata.es/datosabiertos/def/dimension#> .
+@prefix esadm:         <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
+@prefix edintkos:      <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintmeasure: <http://vocab.linkeddata.es/datosabiertos/def/measure#> .
+@prefix edintgast: <http://vocab.linkeddata.es/datosabiertos/def/comercio/cubo-gasto-comercial/> .
+@prefix edinttemp: <http://vocab.linkeddata.es/datosabiertos/def/actividad-economica/cubo-empleo#> .
+@prefix edinttur: <http://vocab.linkeddata.es/datosabiertos/def/turismo/cubo-turismo#> .
+@prefix edinttemp: <http://vocab.linkeddata.es/datosabiertos/def/actividad-economica/cubo-empleo#> .
+@prefix edintrec: <http://vocab.linkeddata.es/datosabiertos/recurso/>.
+@prefix time:      <http://www.w3.org/2006/time#>.
+
+
+edinttur:dsTourism a qb:DataSet ;
+    rdfs:label "Dataset de turismo integrado"@es ;
+    qb:structure edinttur:DSD_Tourism .
+
+edinttur:obsTourism-001 a qb:Observation ;
+    qb:dataSet edinttur:dsTourism ;
+
+    # --- Dimensiones ---
+    edintdim:refAdminRegion      esadm:Murcia ;
+    edintdim:refPeriod           edintrec:instanteobs-001;
+    edintdim:countryOfOrigin     edintkos:UnitedKingdom ;
+
+    # --- Medidas ---
+    edintdim:averageStay              "4.7"^^xsd:decimal ;
+    edintdim:numTourists              "15420"^^xsd:nonNegativeInteger ;
+    edintmeasure:numTravelers         "3280"^^xsd:nonNegativeInteger ;
+    edintmeasure:overnightStays       "13312"^^xsd:nonNegativeInteger .
+
+# --- Año y mes de la observación ---
+edintrec:instanteobs-001 a time:Instant;
+    time:inXSDgYearMonth          "2025-08"^^xsd:gYearMonth .
+</textarea></pre>
+<script>
+    var editor2 = CodeMirror.fromTextArea(document.getElementById("code2"), {
+        mode: "text/turtle",
+        matchBrackets: true
+    });
+</script>
+En el ejemplo anterior se muestra un ejemplo de una observación perteneciente al cubo de datos estadístico en RDF. 
 </span>
 
