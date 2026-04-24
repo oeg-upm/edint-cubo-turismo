@@ -7,4 +7,59 @@ The cubes are defined using the concepts and properties described in the W3C Dat
 To represent the required dimensions and measures, several vocabularies have been reused, and SKOS code lists have been defined. This ontology is part of the catalog of ontology being developed within the context of the <a href="https://edint.es/" target="_blank">Data Space for Smart Urban Infrastructures (EDINT)</a>.
 
 The representation of primary tourism data is done through the ontology of <a href="https://ontologia.segittur.es/turismo/def/core/" target="_blank">SEGITTUR</a> as described in the EDINT Tourism Ontology.
+
+  <pre><textarea style="resize:none" readonly id="code2" name="code" rows="25" cols="100">
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix dc:     <http://purl.org/dc/terms/> .
+@prefix vann:   <http://purl.org/vocab/vann/> .
+@prefix qb:     <http://purl.org/linked-data/cube#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix time:   <http://www.w3.org/2006/time#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix sdmx-measure:   <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix edintdim:      <http://vocab.linkeddata.es/datosabiertos/def/dimension#> .
+@prefix esadm:         <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#> .
+@prefix edintkos:      <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintmeasure: <http://vocab.linkeddata.es/datosabiertos/def/measure#> .
+@prefix edintgast: <http://vocab.linkeddata.es/datosabiertos/def/comercio/cubo-gasto-comercial/> .
+@prefix edinttemp: <http://vocab.linkeddata.es/datosabiertos/def/actividad-economica/cubo-empleo#> .
+@prefix edinttur: <http://vocab.linkeddata.es/datosabiertos/def/turismo/cubo-turismo#> .
+@prefix edinttemp: <http://vocab.linkeddata.es/datosabiertos/def/actividad-economica/cubo-empleo#> .
+@prefix edintrec: <http://vocab.linkeddata.es/datosabiertos/recurso/>.
+@prefix time:      <http://www.w3.org/2006/time#>.
+
+
+edinttur:dsTourism a qb:DataSet ;
+    rdfs:label "Dataset de turismo integrado"@es ;
+    qb:structure edinttur:DSD_Tourism .
+
+edinttur:obsTourism-001 a qb:Observation ;
+    qb:dataSet edinttur:dsTourism ;
+
+    # --- Dimensiones ---
+    edintdim:refAdminRegion      esadm:Murcia ;
+    edintdim:refPeriod           edintrec:instanteobs-001;
+    edintdim:countryOfOrigin     edintkos:UnitedKingdom ;
+
+    # --- Medidas ---
+    edintdim:averageStay              "4.7"^^xsd:decimal ;
+    edintdim:numTourists              "15420"^^xsd:nonNegativeInteger ;
+    edintmeasure:numTravelers         "3280"^^xsd:nonNegativeInteger ;
+    edintmeasure:overnightStays       "13312"^^xsd:nonNegativeInteger .
+
+# --- Año y mes de la observación ---
+edintrec:instanteobs-001 a time:Instant;
+    time:inXSDgYearMonth          "2025-08"^^xsd:gYearMonth .
+</textarea></pre>
+<script>
+    var editor2 = CodeMirror.fromTextArea(document.getElementById("code2"), {
+        mode: "text/turtle",
+        matchBrackets: true
+    });
+</script>
+In the previous example an example of an observation belonging to the statistical RDF Data Cube is shown. 
 </span>
