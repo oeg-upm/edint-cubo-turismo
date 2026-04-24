@@ -40,7 +40,7 @@ edintkostouflotype:National a skos:Concept ;
   	skos:prefLabel "Nacional"@es ;
 	skos:prefLabel "National"@en .
 
-edintkostouflotype:InterNational a skos:Concept ;
+edintkostouflotype:International a skos:Concept ;
 	skos:inScheme edintkos:TourismFlowType ;
   	skos:prefLabel "Internacional"@es ;
 	skos:prefLabel "International"@en .
