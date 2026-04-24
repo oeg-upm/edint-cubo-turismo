@@ -1,0 +1,703 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Barrio"
+    }, {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito"
+    }, {
+      "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid10",
+  "https://www.w3.org/TR/vocab-data-cube/measure" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/measure#averageStay"
+  } ]
+}, {
+  "@id" : "_:genid11",
+  "https://www.w3.org/TR/vocab-data-cube/dimension" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/dimension#registrationNumber"
+  } ],
+  "https://www.w3.org/TR/vocab-data-cube/order" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "5"
+  } ]
+}, {
+  "@id" : "_:genid12",
+  "https://www.w3.org/TR/vocab-data-cube/dimension" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/dimension#refPeriod"
+  } ],
+  "https://www.w3.org/TR/vocab-data-cube/order" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2"
+  } ]
+}, {
+  "@id" : "_:genid13",
+  "https://www.w3.org/TR/vocab-data-cube/dimension" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/dimension#refAdminRegion"
+  } ],
+  "https://www.w3.org/TR/vocab-data-cube/order" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid14",
+  "https://www.w3.org/TR/vocab-data-cube/measure" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/measure#numTravelers"
+  } ]
+}, {
+  "@id" : "_:genid15",
+  "https://www.w3.org/TR/vocab-data-cube/measure" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/measure#occupiedPlaces"
+  } ]
+}, {
+  "@id" : "_:genid16",
+  "https://www.w3.org/TR/vocab-data-cube/measure" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/measure#overnightStays"
+  } ]
+}, {
+  "@id" : "_:genid17",
+  "https://www.w3.org/TR/vocab-data-cube/measure" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/measure#numTourists"
+  } ]
+}, {
+  "@id" : "_:genid18",
+  "https://www.w3.org/TR/vocab-data-cube/measure" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/measure#availablePlaces"
+  } ]
+}, {
+  "@id" : "_:genid5",
+  "https://www.w3.org/TR/vocab-data-cube/measure" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/measure#growthOfPlaces"
+  } ]
+}, {
+  "@id" : "_:genid6",
+  "https://www.w3.org/TR/vocab-data-cube/measure" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/measure#degreeOccupation"
+  } ]
+}, {
+  "@id" : "_:genid7",
+  "https://www.w3.org/TR/vocab-data-cube/measure" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/measure#intensityPerResident"
+  } ]
+}, {
+  "@id" : "_:genid8",
+  "https://www.w3.org/TR/vocab-data-cube/dimension" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/dimension#flowType"
+  } ],
+  "https://www.w3.org/TR/vocab-data-cube/order" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "4"
+  } ]
+}, {
+  "@id" : "_:genid9",
+  "https://www.w3.org/TR/vocab-data-cube/dimension" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/dimension#countryOfResidence"
+  } ],
+  "https://www.w3.org/TR/vocab-data-cube/order" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "3"
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/created",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/linked-data/sdmx/2009/dimension#refArea",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://purl.org/linked-data/sdmx/2009/dimension#refPeriod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/dimension#countryOfResidence",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://www.w3.org/TR/vocab-data-cube/CodedProperty"
+  }, {
+    "@id" : "https://www.w3.org/TR/vocab-data-cube/DimensionProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Country of residence of the tourist."
+  }, {
+    "@language" : "es",
+    "@value" : "País de residencia del turista."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "country of residence"
+  }, {
+    "@language" : "es",
+    "@value" : "país de residencia"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ],
+  "https://www.w3.org/TR/vocab-data-cube/codeList" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/country"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/dimension#flowType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://www.w3.org/TR/vocab-data-cube/CodedProperty"
+  }, {
+    "@id" : "https://www.w3.org/TR/vocab-data-cube/DimensionProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Tipo de flujo turístico (nacional, internacional, interprovincial)."
+  }, {
+    "@language" : "en",
+    "@value" : "Type of tourist flow (national, international, interprovintial)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "flow type"
+  }, {
+    "@language" : "es",
+    "@value" : "tipo de flujo"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  } ],
+  "https://www.w3.org/TR/vocab-data-cube/codeList" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/TourismFlowType"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/dimension#refAdminRegion",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://www.w3.org/TR/vocab-data-cube/DimensionProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Reference to an administrative region that can be a neighborhood, district, or municipality."
+  }, {
+    "@language" : "es",
+    "@value" : "Referencia a una región administrativa que puede ser un barrio, distrito o municipio."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "reference administrative region"
+  }, {
+    "@language" : "es",
+    "@value" : "región administrativa de referencia"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid1"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/linked-data/sdmx/2009/dimension#refArea"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/dimension#refPeriod",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://www.w3.org/TR/vocab-data-cube/DimensionProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Intervalo de tiempo que puede ser por ejemplo una semana, un mes, un año."
+  }, {
+    "@language" : "en",
+    "@value" : "Time interval that can be, for example, a week, a month, a year."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "período de referencia"
+  }, {
+    "@language" : "en",
+    "@value" : "reference period"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2006/time#Interval"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/linked-data/sdmx/2009/dimension#refPeriod"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/dimension#registrationNumber",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://www.w3.org/TR/vocab-data-cube/DimensionProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Número de registro del establecimiento turístico según Segittur."
+  }, {
+    "@language" : "en",
+    "@value" : "Tourist accommodation registration number as defined by Segittur."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "número de registro (Segittur)"
+  }, {
+    "@language" : "en",
+    "@value" : "registration number (Segittur)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/measure#availablePlaces",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://www.w3.org/TR/vocab-data-cube/MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Beda available in Accomodations"
+  }, {
+    "@language" : "es",
+    "@value" : "Plazas disponibles en alojamientos."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "available places"
+  }, {
+    "@language" : "es",
+    "@value" : "plazas disponibles"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/measure#averageStay",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://www.w3.org/TR/vocab-data-cube/MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Average number of overnight stays. Measures the total number of overnight stays divided by the total number of tourists."
+  }, {
+    "@language" : "es",
+    "@value" : "Número de pernoctas en promedio. Mide el número total de pernoctas entre el número total de turistas."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "average stay"
+  }, {
+    "@language" : "es",
+    "@value" : "estancia media"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/measure#degreeOccupation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://www.w3.org/TR/vocab-data-cube/MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Grado de uso del alojamiento que permite detectar períodos de alta ocupación turística. Mide el total de plazas ocupadas sobre el total de plazas disponibles en un determinado período."
+  }, {
+    "@language" : "en",
+    "@value" : "Occupancy rate, which allows for the detection of peak tourist periods. It measures the total number of occupied beds relative to the total number of available beds during a given period."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "grado de ocupación"
+  }, {
+    "@language" : "en",
+    "@value" : "occupancy rate"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/measure#growthOfPlaces",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://www.w3.org/TR/vocab-data-cube/MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Evolución de la capacidad alojativa en un período dado permitiendo conocer si está en expansión, estabilidad o recucción. Mide la variación porcentual de la capacidad alojativa de un período con respecto al período anterior."
+  }, {
+    "@language" : "en",
+    "@value" : "The evolution of accommodation capacity over a given period allows us to determine if it is expanding, stable, or declining. It measures the percentage change in accommodation capacity in a certain period with respect to the previous period."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "crecimiento de plazas"
+  }, {
+    "@language" : "en",
+    "@value" : "growth of places"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/measure#intensityPerResident",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://www.w3.org/TR/vocab-data-cube/MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Presión turística en un área determinada. Mide la relación entre el número de visitantes y el número de residentes en la zona."
+  }, {
+    "@language" : "en",
+    "@value" : "Tourist pressure in a given area. It measures the relationship between the number of visitors and the number of residents in the area."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "intensidad por residente"
+  }, {
+    "@language" : "en",
+    "@value" : "intensity per resident"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#decimal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/measure#numTourists",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://www.w3.org/TR/vocab-data-cube/MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Número total de turistas que entran, salen o internos."
+  }, {
+    "@language" : "en",
+    "@value" : "Total number of inbound, outbound or domestic tourists."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "number of tourists"
+  }, {
+    "@language" : "es",
+    "@value" : "número de turistas"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/measure#numTravelers",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://www.w3.org/TR/vocab-data-cube/MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Number of travelers in general. May be tourism or business travelers."
+  }, {
+    "@language" : "es",
+    "@value" : "Número de viajeros en general. Pueden ser viajeros de turismo o negocios."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "number of travelers"
+  }, {
+    "@language" : "es",
+    "@value" : "número de viajeros"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/measure#occupiedPlaces",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://www.w3.org/TR/vocab-data-cube/MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Número total de plazas que se han ocupado."
+  }, {
+    "@language" : "en",
+    "@value" : "Total number of places that have been occupied."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "occupied places"
+  }, {
+    "@language" : "es",
+    "@value" : "plazas ocupadas"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/measure#overnightStays",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://www.w3.org/TR/vocab-data-cube/MeasureProperty"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Número total de pernoctas."
+  }, {
+    "@language" : "en",
+    "@value" : "Total number of overnight stays."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "overnight stays"
+  }, {
+    "@language" : "es",
+    "@value" : "pernoctaciones"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://purl.org/linked-data/sdmx/2009/measure#obsValue"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Barrio",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A neighborhood is each of the parts into which large towns or their districts are divided [source: DRAE 2011]."
+  }, {
+    "@language" : "es",
+    "@value" : "Un barrio es cada una de las partes en que se dividen los pueblos grandes o sus distritos [fuente: DRAE 2011]."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Barrio"
+  }, {
+    "@language" : "en",
+    "@value" : "Neighbourhood"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Distrito",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Un distrito es cada una de las demarcaciones en que se subdivide un territorio o una población para distribuir y ordenar el ejercicio de los derechos civiles y políticos [fuente: DRAE 2011]."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "District"
+  }, {
+    "@language" : "es",
+    "@value" : "Distrito"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Ente local definido en el artículo 140 de la Constitución española y entidad básica de la organización territorial del Estado según el artículo 1 de la Ley 7/1985."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Municipality"
+  }, {
+    "@language" : "es",
+    "@value" : "Municipio"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/turismo/cubo-turismo#DSD_Tourism",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://www.w3.org/TR/vocab-data-cube/DataStructureDefinition"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Estructura de datos integrada que combina las dimensiones y medidas de los cubos de ocupación turística, flujo turístico e indicadores turísticos."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "DSD integrado de turismo"
+  }, {
+    "@language" : "en",
+    "@value" : "Integrated tourism DSD"
+  } ],
+  "https://www.w3.org/TR/vocab-data-cube/component" : [ {
+    "@id" : "_:genid5"
+  }, {
+    "@id" : "_:genid6"
+  }, {
+    "@id" : "_:genid7"
+  }, {
+    "@id" : "_:genid8"
+  }, {
+    "@id" : "_:genid9"
+  }, {
+    "@id" : "_:genid10"
+  }, {
+    "@id" : "_:genid11"
+  }, {
+    "@id" : "_:genid12"
+  }, {
+    "@id" : "_:genid13"
+  }, {
+    "@id" : "_:genid14"
+  }, {
+    "@id" : "_:genid15"
+  }, {
+    "@id" : "_:genid16"
+  }, {
+    "@id" : "_:genid17"
+  }, {
+    "@id" : "_:genid18"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/TourismFlowType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Tipo de flujo turístico"
+  }, {
+    "@language" : "en",
+    "@value" : "Tourism flow type"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/country",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Country"
+  }, {
+    "@language" : "es",
+    "@value" : "País"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2001/XMLSchema#date",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#Concept",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/2006/time#Interval",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://www.w3.org/TR/vocab-data-cube/",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2026-04-17"
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@value" : "Daniel Doña"
+  }, {
+    "@value" : "Diego Conde Herreros"
+  }, {
+    "@value" : "Edna Ruckhaus"
+  }, {
+    "@value" : "Lucía Sánchez"
+  }, {
+    "@value" : "Oscar Corcho"
+  }, {
+    "@value" : "Socorro Bernardos"
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "es",
+    "@value" : "La ontología de Cubo de Datos Turísticos describe la estructura de los datos de ocupación turística, flujo turístico e indicadores en un único DSD que reúne todas las dimensiones y medidas."
+  }, {
+    "@language" : "en",
+    "@value" : "The Tourism Data Cube ontology describes the structure of tourist occupancy, tourist flow and indicator data in a single DSD that gathers all dimensions and measures."
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@id" : "https://creativecommons.org/licenses/by/4.0/"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@language" : "es",
+    "@value" : "Ontología de Cubo de Datos Turísticos"
+  }, {
+    "@language" : "en",
+    "@value" : "Tourism Data Cube Ontology"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
+    "@value" : "edinttur"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/turismo/cubo-turismo#"
+  } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "https://www.w3.org/TR/vocab-data-cube/"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "0.1.0"
+  } ]
+}, {
+  "@id" : "https://www.w3.org/TR/vocab-data-cube/CodedProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://www.w3.org/TR/vocab-data-cube/DataStructureDefinition",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://www.w3.org/TR/vocab-data-cube/DimensionProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://www.w3.org/TR/vocab-data-cube/MeasureProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://www.w3.org/TR/vocab-data-cube/codeList",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://www.w3.org/TR/vocab-data-cube/component",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://www.w3.org/TR/vocab-data-cube/dimension",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://www.w3.org/TR/vocab-data-cube/measure",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://www.w3.org/TR/vocab-data-cube/order",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+} ]

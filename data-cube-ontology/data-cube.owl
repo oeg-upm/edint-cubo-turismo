@@ -97,7 +97,7 @@ edintdimension:refPeriod
 edintdimension:countryOfResidence
     a owl:ObjectProperty , qb:DimensionProperty , qb:CodedProperty ;
     rdfs:range skos:Concept ;
-    qb:codeList edintkos:countryOfResidence ;
+    qb:codeList edintkos:country ;
     rdfs:label   "country of residence"@en ,
                  "país de residencia"@es ;
     rdfs:comment "País de residencia del turista."@es ,
@@ -109,8 +109,8 @@ edintdimension:flowType
     qb:codeList edintkos:TourismFlowType ;
     rdfs:label   "flow type"@en ,
                  "tipo de flujo"@es ;
-    rdfs:comment "Tipo de flujo turístico (entrada, salida, interno)."@es ,
-                 "Type of tourist flow (inbound, outbound, domestic)."@en .
+    rdfs:comment "Tipo de flujo turístico (nacional, internacional, interprovincial)."@es ,
+                 "Type of tourist flow (national, international, interprovintial)."@en .
 
 edintdimension:registrationNumber
     a owl:DatatypeProperty , qb:DimensionProperty ;
@@ -200,9 +200,9 @@ edintmeasure:overnightStays
 # Esquemas de conceptos (code lists)
 # ============================================================
 
-edintkos:countryOfResidence
+edintkos:country
     a skos:ConceptScheme ;
-    rdfs:label "Country of residence"@en , "País de residencia"@es .
+    rdfs:label "Country"@en , "País"@es .
 
 edintkos:TourismFlowType
     a skos:ConceptScheme ;
